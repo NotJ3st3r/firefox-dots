@@ -1,19 +1,68 @@
- 
- /* Remove all shadows and round corners */
+/* Remove all shadows and round corners */
 * {
     border-radius: 0 !important;
     text-shadow: none !important;
     box-shadow: none !important;
 }
 
+/* Left & right padding for the nav-bar (search bar & icons */
+#nav-bar {
+    padding: 0 1em !important;
+}
+
+/* Hide "Firefox Suggest", "Google Suggestions" and other labels */
+.urlbarView-row[label]::before {
+    /* Suppress the text */
+    display: none !important;
+  }
+  .urlbarView-row[label] {
+    /* Remove the empty space */
+    margin-block-start: 0 !important;
+}
+
 /* Remove all these elements */
-#back-button,        /* previous page in history */
-#forward-button,     /* next page in history */
-#stop-reload-button, /* reload/stop reloading page */
-#PersonalToolbar,    /* bookmark toolbar */
-#alltabs-button,     /* button for showing all open tabs in a dropdown menu */
-#new-tab-button {    /* button to open a new tab */
+#PersonalToolbar,       /* bookmark toolbar */
+#back-button,           /* previous page in history */
+#forward-button,        /* next page in history */
+#stop-reload-button,    /* reload/stop reloading page */
+#alltabs-button,        /* button for showing all open tabs in a dropdown menu */
+#new-tab-button,        /* button to open a new tab */
+#whats-new-menu-button, /* whats new in firefox*/
+#ion-button {           /* ion-button */
     display: none;
+}
+
+/*** Remove items from image context menu ***/
+
+/* Email Image... */
+#context-sendimage, 
+
+/* Set Image as Desktop Background... (and preceding separator) */
+#context-sep-setbackground, #context-setDesktopBackground,
+
+/* Inspect Accessibility Properties */
+#context-inspect-a11y
+{
+  display: none !important;
+}
+
+.urlbarView {
+    margin: 0;
+    padding: 0 0.25em;
+}
+
+#urlbar-input-container,
+#urlbarView,
+#urlbarView {
+    padding: 0 0.5em !important;
+    padding-block: 0 !important;
+    padding-inline: 0 !important;
+    margin-inline: 0 !important;
+    margin-block: 0 !important;
+}
+
+.search-one-offs {
+    display: none !important;
 }
 
 /* As a visual load status I use: https://github.com/luben/load-progress-bar */
