@@ -1,0 +1,17 @@
+ 
+ /* Remove all shadows and round corners */
+* {
+    border-radius: 0 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove all these elements */
+#PersonalToolbar,    /* bookmark toolbar */
+#back-button,        /* previous page in history */
+#forward-button,     /* next page in history */
+#stop-reload-button, /* reload/stop reloading page */
+#alltabs-button,     /* button for showing all open tabs in a dropdown menu */
+#new-tab-button {    /* button to open a new tab */
+    display: none;
+}
