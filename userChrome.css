@@ -1,3 +1,13 @@
+/* set "toolkit.legacyUserProfileCustomizations.stylesheets" to true in about:config for in firefox minimize, maxmize and close buttons */
+
+:root {
+    --focus-outline-color: rgb(15, 15, 15) !important;
+}
+
+.titlebar-buttonbox > titlebar-button {
+    width: 44px;
+}
+
 /* Remove all shadows and round corners */
 * {
     border-radius: 0 !important;
@@ -5,64 +15,100 @@
     box-shadow: none !important;
 }
 
-/* Left & right padding for the nav-bar (search bar & icons */
-#nav-bar {
-    padding: 0 1em !important;
+/* Left & right padding in urlbar */
+#urlbar {
+    padding-inline: 0.5em !important;
 }
 
 /* Hide "Firefox Suggest", "Google Suggestions" and other labels */
 .urlbarView-row[label]::before {
-    /* Suppress the text */
     display: none !important;
-  }
-  .urlbarView-row[label] {
-    /* Remove the empty space */
+}
+
+/* Remove the empty space */
+.urlbarView-row[label] {
     margin-block-start: 0 !important;
 }
 
-/* Remove all these elements */
-#PersonalToolbar,       /* bookmark toolbar */
-#back-button,           /* previous page in history */
-#forward-button,        /* next page in history */
-#stop-reload-button,    /* reload/stop reloading page */
-#alltabs-button,        /* button for showing all open tabs in a dropdown menu */
-#new-tab-button,        /* button to open a new tab */
-#whats-new-menu-button, /* whats new in firefox*/
-#ion-button {           /* ion-button */
+/* No spacer in tab bar */
+#TabsToolbar >.titlebar-spacer {
+    display: none;
+}
+
+/* New tab button */
+#tabs-newtab-button,#new-tab-button {
+    opacity: 0;
+    max-width: 0;
+    animation: fade-out .2s linear;
+}
+
+#navigator-toolbox:hover #new-tab-button {
+    opacity: 1;
+    max-width: 40px;
+    animation: fade-in .2s linear;
+}
+
+#navigator-toolbox:hover #tabs-newtab-button {
+    opacity: 1;
+    max-width: 40px;
+    animation: fade-in .2s linear;
+}
+
+/* bookmark page */
+#star-button-box {
+    opacity: 0;
+    animation: fade-out .2s linear;
+}
+
+#navigator-toolbox:hover #star-button-box {
+    opacity: 1;
+    animation: fade-in .2s linear;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; max-width: 0; }
+    100% { opacity: 1; max-width: 40px; }
+}
+
+@keyframes fade-out {
+    0% { opacity: 1; max-width: 40px; }
+    100% { opacity: 0; max-width: 0; }
+}
+
+/*** Remove all these elements ***/
+/* bookmark toolbar */
+#PersonalToolbar,
+/* remote control box */
+#remote-control-box,
+/* Firefox protection icon in url bar */
+#tracking-protection-icon-container,
+/* site wide translate */
+#translations-button,
+/* Lockpad in url bar */
+#identity-box,
+/* toggle reader mode */
+#reader-mode-button,
+/* button for showing all open tabs in a dropdown menu */
+#alltabs-button,
+/* whats new in firefox*/
+#whats-new-menu-button,
+/* ion-button */
+#ion-button {
     display: none;
 }
 
 /*** Remove items from image context menu ***/
-
 /* Email Image... */
-#context-sendimage, 
-
+#context-sendimage,
 /* Set Image as Desktop Background... (and preceding separator) */
-#context-sep-setbackground, #context-setDesktopBackground,
-
+#context-sep-setbackground,
+#context-setDesktopBackground,
 /* Inspect Accessibility Properties */
-#context-inspect-a11y
-{
-  display: none !important;
-}
-
-.urlbarView {
-    margin: 0;
-    padding: 0 0.25em;
-}
-
-#urlbar-input-container,
-#urlbarView,
-#urlbarView {
-    padding: 0 0.5em !important;
-    padding-block: 0 !important;
-    padding-inline: 0 !important;
-    margin-inline: 0 !important;
-    margin-block: 0 !important;
-}
-
-.search-one-offs {
+#context-inspect-a11y {
     display: none !important;
 }
 
-/* As a visual load status I use: https://github.com/luben/load-progress-bar */
+/* Remove "This time search with" */
+.search-one-offs {
+    display: none !important;
+}
