@@ -8,9 +8,13 @@
     width: 44px;
 }
 
-/* Remove all shadows and round corners */
+/* remove all round corners exept for the autoscroller */
+* :not(.autoscroller){
+  border-radius: 0 !important;
+}
+
+/* Remove all shadows */
 * {
-    border-radius: 0 !important;
     text-shadow: none !important;
     box-shadow: none !important;
 }
