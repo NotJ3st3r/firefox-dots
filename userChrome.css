@@ -9,7 +9,7 @@
 }
 
 /* remove all round corners exept for the autoscroller */
-* :not(.autoscroller){
+* :not(.autoscroller) :not(#downloads-button){
   border-radius: 0 !important;
 }
 
