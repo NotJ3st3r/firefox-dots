@@ -39,25 +39,6 @@
     display: none;
 }
 
-/* New tab button */
-#tabs-newtab-button,#new-tab-button {
-    opacity: 0;
-    max-width: 0;
-    animation: fade-out .2s linear;
-}
-
-#navigator-toolbox:hover #new-tab-button {
-    opacity: 1;
-    max-width: 40px;
-    animation: fade-in .2s linear;
-}
-
-#navigator-toolbox:hover #tabs-newtab-button {
-    opacity: 1;
-    max-width: 40px;
-    animation: fade-in .2s linear;
-}
-
 /* bookmark page */
 #star-button-box {
     opacity: 0;
