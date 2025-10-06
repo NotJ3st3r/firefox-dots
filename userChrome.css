@@ -21,7 +21,7 @@
 
 /* Left & right padding in urlbar */
 #urlbar {
-    padding-inline: 0.5em !important;
+    padding-inline: 1rem !important;
 }
 
 /* Hide "Firefox Suggest", "Google Suggestions" and other labels */
@@ -39,26 +39,6 @@
     display: none;
 }
 
-/* bookmark page */
-#star-button-box {
-    opacity: 0;
-    animation: fade-out .2s linear;
-}
-
-#navigator-toolbox:hover #star-button-box {
-    opacity: 1;
-    animation: fade-in .2s linear;
-}
-
-@keyframes fade-in {
-    0% { opacity: 0; max-width: 0; }
-    100% { opacity: 1; max-width: 40px; }
-}
-
-@keyframes fade-out {
-    0% { opacity: 1; max-width: 40px; }
-    100% { opacity: 0; max-width: 0; }
-}
 
 /*** Remove all these elements ***/
 /* bookmark toolbar */
@@ -67,8 +47,6 @@
 #remote-control-box,
 /* Firefox protection icon in url bar */
 #tracking-protection-icon-container,
-/* site wide translate */
-#translations-button,
 /* Lockpad in url bar */
 #identity-box,
 /* toggle reader mode */
