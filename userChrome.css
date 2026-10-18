@@ -2,15 +2,31 @@
 
 :root {
     --focus-outline-color: rgb(15, 15, 15) !important;
+    --panel-border-radius: 0px !important;
+    --panel-menuitem-border-radius: 0px !important;
+    --arrowpanel-border-radius: 0px !important;
+    --arrowpanel-menuitem-border-radius: 0px !important;
+    --tab-border-radius: 0px !important;
 }
 
 .titlebar-buttonbox > titlebar-button {
     width: 44px;
 }
 
-/* remove all round corners exept for the autoscroller */
-* :not(.autoscroller) :not(#downloads-button) :not(.toggle-button){
-  border-radius: 0 !important;
+/* remove all round */
+/* * :not(.autoscroller) :not(#downloads-button) :not(.toggle-button){ */
+* {
+    border-radius: 0 !important;
+}
+
+panel,
+menupopup {
+    --panel-border-radius: 0px !important;
+    --panel-menuitem-border-radius: 0px !important;
+    --arrowpanel-border-radius: 0px !important;
+    --arrowpanel-menuitem-border-radius: 0px !important;
+
+    border-radius: 0px !important;
 }
 
 /* Remove all shadows */
@@ -18,8 +34,6 @@
     text-shadow: none !important;
     box-shadow: none !important;
 }
-
-
 
 /* Hide "Firefox Suggest", "Google Suggestions" and other labels */
 .urlbarView-row[label]::before {
@@ -35,7 +49,6 @@
 #TabsToolbar >.titlebar-spacer {
     display: none;
 }
-
 
 /*** Remove all these elements ***/
 /* bookmark toolbar */
