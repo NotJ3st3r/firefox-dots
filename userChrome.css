@@ -14,9 +14,8 @@
     width: 44px;
 }
 
-/* remove all round */
-/* * :not(.autoscroller) :not(#downloads-button) :not(.toggle-button){ */
-* {
+/* remove all rounded corners */
+* :not(#downloads-indicator-progress-inner) {
     border-radius: 0 !important;
 }
 
